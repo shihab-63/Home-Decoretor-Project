@@ -6,6 +6,7 @@ import Collections from "../Pages/Collections";
 import About from "../Pages/About";
 import { Contact } from "lucide-react";
 
+
 export const router = createBrowserRouter([
   {
     path: "/",

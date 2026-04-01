@@ -22,7 +22,7 @@ const Navbar = () => {
     </li>
   ));
   return (
-    <div className="bg-[#2C2416] text-slate-50">
+    <div className="backdrop-blur-lg bg-[#2C2416] text-slate-50 sticky z-40 top-0 right-0 ">
       <div className="flex justify-between items-center container mx-auto px-3 md:px-0 py-3">
         <h1 className="font-cormorant text-3xl font-bold inline-flex tracking-wide items-baseline gap-2">
           <PaintRoller className="text-[#AB905E]" /> MAISON
@@ -78,7 +78,7 @@ const Navbar = () => {
             <ul className="text-amber-500 flex flex-col gap-6">{navLinks}</ul>
           </div>
 
-          <div className="px-3 pt-6 ">
+          <div className="px-3 pt-6">
             <button className="btn btn-primary btn-block">Sign In</button>
           </div>
         </div>
