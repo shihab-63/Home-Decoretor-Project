@@ -44,7 +44,7 @@ const ProductCard = ({ furniture }) => {
             ${furniture.price}
           </span>
 
-          <button className="bg-[#c9a86a] text-white text-[11px] font-bold uppercase tracking-widest px-6 py-3 rounded-full hover:bg-[#b09055] transition-colors shadow-sm cursor-pointer">
+          <button className="bg-[#c9a86a] btn text-white text-[11px] font-bold uppercase tracking-widest px-6 py-3 rounded-full hover:bg-[#b09055] transition-colors shadow-sm cursor-pointer">
             Add to Cart
           </button>
         </div>
