@@ -59,7 +59,7 @@ const Collections = () => {
       {filteredProducts.length === 0 ? (
         <div>
           <DotLottieReact
-            className="w-2xl mx-auto mb-12"
+            className="md:w-2xl mx-auto mb-12"
             src="/NoItemFound.lottie"
             loop
             autoplay
