@@ -1,6 +1,6 @@
 import React from "react";
 import { Heart, Star } from "lucide-react";
-import { Link } from "react-router";
+import { Link, ScrollRestoration } from "react-router";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 
 const ProductCard = ({ furniture, loading }) => {
@@ -20,6 +20,7 @@ const ProductCard = ({ furniture, loading }) => {
       to={`/products-details/${furniture.id}`}
       className="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300 flex flex-col border border-gray-100 font-jost"
     >
+      <ScrollRestoration />
       <div className="relative w-full h-72 bg-[#f8f6f3]">
         <img
           src={furniture.image}
@@ -60,7 +61,7 @@ const ProductCard = ({ furniture, loading }) => {
             ${furniture.price}
           </span>
 
-          <button  className="bg-[#c9a86a] btn text-white text-[11px] font-bold uppercase tracking-widest px-6 py-3 rounded-full hover:bg-[#b09055] transition-colors shadow-sm cursor-pointer">
+          <button className="bg-[#c9a86a] btn text-white text-[11px] font-bold uppercase tracking-widest px-6 py-3 rounded-full hover:bg-[#b09055] transition-colors shadow-sm cursor-pointer">
             Add to Cart
           </button>
         </div>
