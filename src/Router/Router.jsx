@@ -5,7 +5,7 @@ import Home from "../Pages/Home";
 import Collections from "../Pages/Collections";
 import About from "../Pages/About";
 import { Contact } from "lucide-react";
-
+import ProductsDetails from "../Components/ProductsDetails/ProductsDetails";
 
 export const router = createBrowserRouter([
   {
@@ -28,6 +28,10 @@ export const router = createBrowserRouter([
       {
         path: "/contact",
         Component: Contact,
+      },
+      {
+        path: "/products-details/:id",
+        Component: ProductsDetails,
       },
     ],
   },

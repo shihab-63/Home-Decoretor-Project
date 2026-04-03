@@ -10,6 +10,7 @@ const useProducts = () => {
     const fetchProducts = async () => {
       try {
         const response = await axios("/furnitureData.json");
+        await new Promise((resolve) => setTimeout(resolve, 300));
         setProducts(response.data);
       } catch (error) {
         setError(error.message || "Something went wrong fetching products!");

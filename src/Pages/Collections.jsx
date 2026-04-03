@@ -4,7 +4,7 @@ import ProductCard from "../Components/AllProducts/ProductCard";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 
 const Collections = () => {
-  const { products } = useProducts();
+  const { products, loading } = useProducts();
   const [search, setSearch] = useState("");
   const term = search.trim().toLocaleLowerCase();
   const filteredProducts = term
@@ -12,11 +12,10 @@ const Collections = () => {
         product.name.toLocaleLowerCase().includes(term),
       )
     : products;
-  console.log(filteredProducts);
 
   return (
     <div className="pb-8">
-      <div className="bg-[#f6f1eb]">
+      <div className="bg-[#f8ebdb]">
         <div className="bg-linear-to-r from-[#2b1e14] via-[#3a2a1f] to-[#2b1e14] text-center py-20 px-4">
           <p className="text-xs font-jost tracking-[0.3em] text-[#c9a86a] mb-4 uppercase">
             Curated Living Essentials
@@ -56,7 +55,16 @@ const Collections = () => {
         </p>
       </div>
 
-      {filteredProducts.length === 0 ? (
+      {loading ? (
+        <div className="flex justify-center mt-24 items-center h-96">
+          <DotLottieReact
+            className="h-full"
+            src="/loading.lottie"
+            loop
+            autoplay
+          />
+        </div>
+      ) : filteredProducts.length === 0 ? (
         <div>
           <DotLottieReact
             className="md:w-2xl mx-auto mb-12"
@@ -65,13 +73,17 @@ const Collections = () => {
             autoplay
           />
           <p className="text-center text-slate-600 md:text-2xl hover:text-slate-700 transition">
-            📦 No apps found. Try a different name!
+            📦 No products found. Try a different name!
           </p>
         </div>
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6  container mx-auto px-3 md:px-0  my-12">
           {filteredProducts.map((furniture) => (
-            <ProductCard key={furniture.id} furniture={furniture} />
+            <ProductCard
+              loading={loading}
+              key={furniture.id}
+              furniture={furniture}
+            />
           ))}
         </div>
       )}
