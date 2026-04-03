@@ -1,6 +1,6 @@
 import React from "react";
 import useProducts from "../../Hooks/useProducts";
-import { Link, useParams } from "react-router";
+import { Link, ScrollRestoration, useParams } from "react-router";
 import {
   ArrowLeft,
   CheckCircle2,
@@ -19,11 +19,17 @@ const ProductsDetails = () => {
   if (loading)
     return (
       <div className="flex justify-center mt-24 items-center h-96">
-        <DotLottieReact className="h-full" src="/loading.lottie" loop autoplay />
+        <DotLottieReact
+          className="h-full"
+          src="/loading.lottie"
+          loop
+          autoplay
+        />
       </div>
     );
   return (
     <div className="bg-[#f6f1eb] min-h-screen py-12 px-3 md:px-0 font-jost">
+      <ScrollRestoration />
       <div className="container mx-auto ">
         <Link
           to="/collections"
