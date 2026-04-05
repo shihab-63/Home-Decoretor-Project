@@ -3,7 +3,7 @@ import RootLayout from "../Layouts/RootLayout";
 import ErrorPages from "../Pages/ErrorPages";
 import Home from "../Pages/Home";
 import Collections from "../Pages/Collections";
-import About from "../Pages/About";
+import About from "../Pages/Wishlist";
 import { Contact } from "lucide-react";
 import ProductsDetails from "../Components/ProductsDetails/ProductsDetails";
 
@@ -22,7 +22,7 @@ export const router = createBrowserRouter([
         Component: Collections,
       },
       {
-        path: "/about",
+        path: "/wishlist",
         Component: About,
       },
       {

@@ -11,6 +11,7 @@ import {
   XCircle,
 } from "lucide-react";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
+import { addToWishlist } from "../../Utils/LocalStorage";
 
 const ProductsDetails = () => {
   const { products, loading } = useProducts();
@@ -106,6 +107,7 @@ const ProductsDetails = () => {
                 {product.stock ? "Add to Cart" : "Currently Unavailable"}
               </button>
               <button
+                onClick={() => addToWishlist(product)}
                 disabled={!product.stock}
                 className="w-full bg-emerald-800 cursor-pointer text-white py-4 rounded-full flex items-center justify-center gap-3 font-bold tracking-[0.15em] uppercase hover:bg-[#c9a86a] transition-all duration-300 disabled:bg-gray-300 disabled:cursor-not-allowed shadow-lg hover:shadow-xl hover:-translate-y-1"
               >
