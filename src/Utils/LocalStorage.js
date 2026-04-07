@@ -45,3 +45,15 @@ export const addToWishlist = (product) => {
     return alert("Something went wrong!");
   }
 };
+
+// Removed
+export const removeFromWishlist = (id) => {
+  const getData = getWishList();
+
+  try {
+    const removed = getData.filter((data) => data.id !== id);
+    localStorage.setItem("wishlist", JSON.stringify(removed));
+  } catch (error) {
+    console.error(error);
+  }
+};
