@@ -66,7 +66,7 @@ const Wishlist = () => {
         {sortWishlist.length === 0 ? (
           <div className="container mx-auto px-3 md:px-0">
             <DotLottieReact
-              className="w-96 mx-auto"
+              className="md:w-96 mx-auto"
               src="/Empty.lottie"
               loop
               autoplay
