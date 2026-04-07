@@ -78,22 +78,25 @@ const Wishlist = () => {
           </div>
         ) : (
           sortWishlist.map((p) => (
-            <div key={p.id} className="mt-5 border rounded-2xl">
-              <div className="flex items-center gap-5">
+            <div
+              key={p.id}
+              className="mt-5 bg-linear-to-r from-[#afb19841] to-[#27ff0a33] rounded-2xl"
+            >
+              <div className="flex items-center gap-1 md:gap-5">
                 <figure className="">
                   <img
-                    className="rounded-l-2xl w-44 h-28 object-cover"
+                    className="rounded-l-2xl md:w-44 h-28 object-cover"
                     src={p.image}
                     alt={p.name}
                   />
                 </figure>
-                <div className="flex justify-between items-center w-full pr-8">
+                <div className="flex justify-between gap-5 items-center w-full pr-8">
                   <div>
-                    <p className="text-lg font-semibold">{p.name}</p>
+                    <p className="md:text-lg font-semibold">{p.name}</p>
                     <p>{p.category}</p>
                   </div>
-                  <div className="flex items-center gap-4">
-                    <p className="text-xl font-semibold">${p.price}</p>
+                  <div className="flex items-center gap-2 md:gap-4">
+                    <p className="md:text-xl font-semibold">${p.price}</p>
                     <Trash2
                       onClick={() => handleRemoved(p.id)}
                       className="text-red-600 cursor-pointer active:scale-95"
